@@ -34,9 +34,9 @@ export function LanguageSwitcher({ languages }: LanguageSwitcherProps) {
 
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger className='flex items-center cursor-pointer hover:text-sky-200 data-[state=open]:text-sky-200 border-b-2 data-[state=open]:border-b-transparent'>
+			<DropdownMenuTrigger className='group flex items-center cursor-pointer hover:text-sky-200 data-[state=open]:text-sky-200 border-b-2 data-[state=open]:border-b-transparent '>
 				{currentLang[0]?.title}
-				<svg xmlns='http://www.w3.org/2000/svg' className='fill-current' height='20px' width='20px' viewBox='0 -960 960 960'>
+				<svg xmlns='http://www.w3.org/2000/svg' className='fill-current group-data-[state=open]:rotate-180' height='20px' width='20px' viewBox='0 -960 960 960'>
 					<path d="M444-768v438L243-531l-51 51 288 288 288-288-51-51-201 201v-438h-72Z"/>
 				</svg>
 			</DropdownMenuTrigger>
