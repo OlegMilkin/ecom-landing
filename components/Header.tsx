@@ -85,8 +85,8 @@ export function Header() {
 						<Image
 							src={burgerIcon}
 							alt='Home'
-							width={45}
-							height={45}
+							width={35}
+							height={35}
 							className='cursor-pointer'
 						/>
 					</DrawerTrigger>
@@ -95,8 +95,8 @@ export function Header() {
 							<Image
 								src={closeIcon}
 								alt='Home'
-								width={45}
-								height={45}
+								width={35}
+								height={35}
 								className='cursor-pointer'
 							/>
 						</DrawerClose>

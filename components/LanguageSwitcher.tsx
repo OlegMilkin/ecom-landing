@@ -43,7 +43,7 @@ export function LanguageSwitcher({ languages }: LanguageSwitcherProps) {
 			<DropdownMenuContent
 				sideOffset={-2}
 				align='start'
-				className='text-white min-w-auto rounded-none p-0 border-2 border-sky-200'
+				className='text-white min-w-auto rounded-none p-0 border-2 border-sky-200 bg-black'
 			>
 				{filteredLanguages.map(item => (
 					<DropdownMenuItem 

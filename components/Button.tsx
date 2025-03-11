@@ -23,13 +23,13 @@ export function Button({
 	
 	switch (size) {
 		case ("medium"):
-			buttonClasses = twMerge('button-gradient uppercase px-5 py-2 rounded-[50px] flex items-center hover:text-sky-200 max-h-[40px]', className);
+			buttonClasses = twMerge('button-gradient uppercase px-5 py-2 rounded-[50px] flex-inline items-center hover:text-sky-200 max-h-[40px]', className);
 			break;
 		case ("small"):
 			buttonClasses = twMerge('smallclass', className);
 			break;
 		default:
-			buttonClasses = twMerge('button-gradient text-xl uppercase px-10 py-4 rounded-[50px] flex items-center hover:text-sky-200 max-h-[60px]', className);
+			buttonClasses = twMerge('button-gradient text-sm lg:text-lg uppercase px-5 lg:px-10 py-2 lg:py-4 rounded-[50px] flex-inline items-center hover:text-sky-200 max-h-[60px]', className);
 	}
 
 	const link = <Link href={href} className={buttonClasses}>{title}</Link>;
