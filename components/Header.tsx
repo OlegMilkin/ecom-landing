@@ -46,7 +46,7 @@ export function Header() {
 	const t = useTranslations('HomePage');
 
 	return (
-		<header className="flex justify-between items-center min-h-[80px]">
+		<header className="flex justify-between items-center min-h-[80px] sticky top-0 bg-black">
 			<Link href='/' className='flex-shrink-0'>
 				<Image 
 					src={logo}

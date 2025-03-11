@@ -39,50 +39,50 @@ export default function Home() {
         </p>
         <div className='overflow-hidden w-full'>
           <div className="grid grid-cols-2 lg:grid-cols-4 text-white text-center mb-[-1px] mr-[-1px]">
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 ~$100 billion
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 0.8%
               </strong>
-              <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
+              <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p> block
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 ~30
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 25+
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 2024
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 1,200+
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 24/7
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
             </div>
-            <div className='border-b border-r border-sky-100'>
-              <strong className='text-2xl font-medium lg:text-3xl'>
+            <div className='border-b border-r border-sky-100 py-4 lg:py-8 px-2'>
+              <strong className='text-2xl font-medium lg:text-3xl mb-3 block'>
                 5 billion+
               </strong>
               <p className='text-sm lg:text-lg'>Lorem ipsum dolor sit amet</p>
@@ -91,6 +91,13 @@ export default function Home() {
         </div>
       </section>
       {/* Archievements section end */}
+
+      {/* Expertise section start */}
+      <h2 className='text-4xl lg:text-6xl text-center my-4 lg:my-11'>
+        Expertise
+      </h2>
+      
+      {/* Expertise section end */}
     </>
   );
 }
