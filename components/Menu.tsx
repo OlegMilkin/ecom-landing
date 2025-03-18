@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 interface MenuProps {
@@ -9,6 +11,13 @@ interface MenuProps {
 }
 
 export function Menu({menuItems, menuClass}: MenuProps) {
+	const scrollToAnchor = (anchorId: string) => {
+    const anchor = document.querySelector(anchorId);
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 	return (
 		<nav className={menuClass}>
 			<ul className="flex gap-11 lg:gap-7 flex-col lg:flex-row">
@@ -17,6 +26,9 @@ export function Menu({menuItems, menuClass}: MenuProps) {
 						<Link
 							className="uppercase text-2xl lg:text-base text-gradient text-white" 
 							href={menuItem.link}
+							onClick={() => {
+								scrollToAnchor(menuItem.link);
+							}}
 						>
 							{menuItem.title}
 						</Link>

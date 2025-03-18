@@ -21,11 +21,11 @@ import { languages } from '@/i18n/localesConfig';
 
 const menuItems = [
 	{
-		link: '#',
+		link: '#archievements',
 		title: 'Achievements'
 	},
 	{
-		link: '#',
+		link: '#expertise',
 		title: 'Expertise'
 	},
 	{
@@ -46,7 +46,7 @@ export function Header() {
 	const t = useTranslations('HomePage');
 
 	return (
-		<header className="flex justify-between items-center min-h-[80px] sticky top-0 bg-black">
+		<header className="flex justify-between items-center min-h-[80px] sticky top-0 bg-black z-10">
 			<Link href='/' className='flex-shrink-0'>
 				<Image 
 					src={logo}
