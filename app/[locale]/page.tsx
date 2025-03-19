@@ -1,75 +1,29 @@
-import { useTranslations } from 'next-intl';
-import { Button } from '@/components/Button';
-import { Archivements } from '@/components/Archivements';
+import { Achivements } from '@/components/achivements/Achivements';
 import { Expertise } from '@/components/expertise/Expertise';
+import { ServicesAndTechnologies } from '@/components/services-and-technologies/ServicesAndTechnologies';
+import usePageData from './use-page-data';
+import { Hero } from '@/components/hero/Hero';
 
 export default function Home() {
-  const t = useTranslations('HomePage');
-
-  const expertice = [{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  }, {
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  }, {
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  },{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  },{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  },{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  },{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  },{
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  }, {
-    title: 'Lorem ipsum dolor sit amet consectetur.',
-    description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
-    cover: '/div.png',
-  }];
+  const { experticeList, achievementsList } = usePageData();
 
   return (
     <>
       {/* Hero section start */}
-      <section className='min-h-0 lg:min-h-[663px] bg-[url(/hero-banner.png)] bg-no-repeat bg-center bg-contain flex flex-col items-center justify-center lg:gap-10 gap-4 lg:py-0 py-4'>
-        <h1 className='text-6xl lg:text-9xl font-medium text-center'>
-          ECOM is simple
-        </h1>
-        <p className='max-w-[745px] text-center lg:text-lg text-sm'>
-          Lorem ipsum dolor sit amet consectetur. Quis donec sit massa odio lacus consectetur congue sem. 
-          Risus diam odio magna dui. Ut sed ut tellus id mattis.
-          Tempus bibendum quisque scelerisque euismod varius.
-        </p>
-        <Button 
-          title={t('contactUs')}
-          href="/contact"
-          size="big"
-        />
-      </section>
+      <Hero />
       {/* Hero section end */}
+
       {/* Archievements section start */}
-      <Archivements />
+      <Achivements achievements={achievementsList} />
       {/* Archievements section end */}
 
       {/* Expertise section start */}
-      <Expertise expertice={expertice} />
+      <Expertise expertice={experticeList} />
       {/* Expertise section end */}
+
+      {/* Services & Technologies start */}
+      <ServicesAndTechnologies />
+      {/* Services & Technologies end */}
     </>
   );
 }

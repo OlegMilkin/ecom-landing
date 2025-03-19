@@ -14,36 +14,15 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { Menu } from '@/components/Menu';
-import { Button } from '@/components/Button';
+import { Menu } from '@/components/header/Menu';
+import { Button } from '@/components/ui/Button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { languages } from '@/i18n/localesConfig';
-
-const menuItems = [
-	{
-		link: '#archievements',
-		title: 'Achievements'
-	},
-	{
-		link: '#expertise',
-		title: 'Expertise'
-	},
-	{
-		link: '#',
-		title: 'Pricing'
-	},
-	{
-		link: '#',
-		title: 'Partners'
-	},
-	{
-		link: '#',
-		title: 'Reviewers'
-	},
-]
+import useHeaderData from './use-header-data';
 
 export function Header() {
 	const t = useTranslations('HomePage');
+	const { menuItems } = useHeaderData();
 
 	return (
 		<header className="flex justify-between items-center min-h-[80px] sticky top-0 bg-black z-10">
