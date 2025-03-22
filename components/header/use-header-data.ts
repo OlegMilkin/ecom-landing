@@ -6,7 +6,7 @@ const usePageData = () => {
     link: '/#expertise',
     title: 'Expertise'
   }, {
-    link: '#',
+    link: '/#pricing',
     title: 'Pricing'
   }, {
     link: '#',

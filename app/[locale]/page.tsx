@@ -3,6 +3,7 @@ import { Expertise } from '@/components/expertise/Expertise';
 import { ServicesAndTechnologies } from '@/components/services-and-technologies/ServicesAndTechnologies';
 import usePageData from './use-page-data';
 import { Hero } from '@/components/hero/Hero';
+import { Pricing } from '@/components/pricing/Pricing';
 
 export default function Home() {
   const {
@@ -10,6 +11,7 @@ export default function Home() {
     achievementsList,
     servicesList,
     technologiesList,
+    PricingList,
   } = usePageData();
 
   return (
@@ -32,6 +34,10 @@ export default function Home() {
         technologiesList={technologiesList}
       />
       {/* Services & Technologies end */}
+
+      {/* Pricing start */}
+      <Pricing pricingList={PricingList} />
+      {/* Pricing end */}
     </>
   );
 }

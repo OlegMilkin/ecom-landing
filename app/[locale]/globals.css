@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -11,6 +12,7 @@
   
   /* Fonts */
   --font-inter: "Inter", sans-serif; 
+  --font-poppins: "Poppins", sans-serif;
 }
 
 .container {
@@ -35,4 +37,9 @@
 
 .section-gradient {
   background: linear-gradient(180deg, var(--color-black) 0%, rgba(112, 220, 234, 0.8) 13.5%, rgba(64, 147, 195, 0.9) 50%, rgba(112, 220, 234, 0.8) 87%, var(--color-black) 100%);
+}
+
+.pricing-card-gradient {
+  box-shadow: 0 10px 17px 0 rgba(82, 67, 194, 0.26);
+  background: linear-gradient(180deg, rgba(106, 215, 233, 0.7) 5.23%, rgba(62, 158, 206, 0.7) 50%, rgba(72, 148, 201, 0.7) 100%);
 }

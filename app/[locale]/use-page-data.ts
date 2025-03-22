@@ -63,7 +63,7 @@ const usePageData = () => {
   },{
     title: 'Warehouse',
     icon: 'ss4.png',
-  },]
+  },];
 
   const technologiesList = [
     '1.jpg',
@@ -81,13 +81,31 @@ const usePageData = () => {
     '13.jpg',
     '14.jpg',
     '15.jpg',
-  ]
+  ];
+
+  const PricingList = [{
+    price: '$45',
+    title: 'Company',
+    description: 'Automation plus enterprise-grade features.',
+    advantages: ['Multi-step Zap', 'Unlimited Premium', 'Unlimited Users Team', 'Advanced Admin', 'Custom Data Retention'],
+  },{
+    price: '$89',
+    title: 'Company',
+    description: 'Automation plus enterprise-grade features.',
+    advantages: ['Multi-step Zap', 'Unlimited Premium', 'Unlimited Users Team', 'Advanced Admin', 'Custom Data Retention'],
+  },{
+    price: '$189',
+    title: 'Company',
+    description: 'Automation plus enterprise-grade features.',
+    advantages: ['Multi-step Zap', 'Unlimited Premium', 'Unlimited Users Team', 'Advanced Admin', 'Custom Data Retention'],
+  }];
 
   return {
     experticeList,
     achievementsList,
     servicesList,
     technologiesList,
+    PricingList,
   }
 }
 
