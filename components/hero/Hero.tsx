@@ -5,7 +5,7 @@ export function Hero() {
   const t = useTranslations('HomePage');
 
   return (
-     <section className='min-h-0 lg:min-h-[663px] bg-[url(/hero-banner.png)] bg-no-repeat bg-center bg-contain flex flex-col items-center justify-center lg:gap-10 gap-4 lg:py-0 py-4'>
+     <section className='container min-h-0 lg:min-h-[663px] bg-[url(/hero-banner.png)] bg-no-repeat bg-center bg-contain flex flex-col items-center justify-center lg:gap-10 gap-4 lg:py-0 py-4'>
       <h1 className='text-6xl lg:text-9xl font-medium text-center'>
         ECOM is simple
       </h1>

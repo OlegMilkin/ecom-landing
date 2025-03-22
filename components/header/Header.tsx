@@ -25,66 +25,68 @@ export function Header() {
 	const { menuItems } = useHeaderData();
 
 	return (
-		<header className="flex justify-between items-center min-h-[80px] sticky top-0 bg-black z-10">
-			<Link href='/' className='flex-shrink-0'>
-				<Image 
-					src={logo}
-					alt='Home'
-					width={212}
-					height={68}
-					className='hidden lg:block'
-				/>
-				<Image
-					src={mobileLogo}
-					alt='Home'
-					width={81}
-					height={63}
-					className='block lg:hidden'
-				/>
-			</Link>
-			<Menu menuItems={menuItems} menuClass='hidden lg:block' />
-			<div className="flex items-center gap-6">
-				<LanguageSwitcher languages={languages} />
-				<Link href="#" className='block lg:hidden'>
+		<header className="min-h-[80px] sticky top-0 bg-black z-10">
+			<div className="container flex justify-between items-center">
+				<Link href='/' className='flex-shrink-0'>
+					<Image 
+						src={logo}
+						alt='Home'
+						width={212}
+						height={68}
+						className='hidden lg:block'
+					/>
 					<Image
-						src={contactUsIcon}
-						alt=""
-						width="31"
-						height="29"
+						src={mobileLogo}
+						alt='Home'
+						width={81}
+						height={63}
+						className='block lg:hidden'
 					/>
 				</Link>
-				<Button 
-					title={t('contactUs')}
-					href="/contact"
-					size="medium"
-					className='hidden lg:block'
-				/>
-				<Drawer direction="right">
-					<DrawerTrigger className="block lg:hidden">
+				<Menu menuItems={menuItems} menuClass='hidden lg:block' />
+				<div className="flex items-center gap-6">
+					<LanguageSwitcher languages={languages} />
+					<Link href="#" className='block lg:hidden'>
 						<Image
-							src={burgerIcon}
-							alt='Home'
-							width={35}
-							height={35}
-							className='cursor-pointer'
+							src={contactUsIcon}
+							alt=""
+							width="31"
+							height="29"
 						/>
-					</DrawerTrigger>
-					<DrawerContent className="bg-black border-l border-sky-100 justify-center">
-						<DrawerClose className='absolute text-white top-[19px] right-[15px]'>
+					</Link>
+					<Button 
+						title={t('contactUs')}
+						href="/contact"
+						size="medium"
+						className='hidden lg:block'
+					/>
+					<Drawer direction="right">
+						<DrawerTrigger className="block lg:hidden">
 							<Image
-								src={closeIcon}
+								src={burgerIcon}
 								alt='Home'
 								width={35}
 								height={35}
 								className='cursor-pointer'
 							/>
-						</DrawerClose>
-						<DrawerHeader className='pl-10'>
-							<DrawerTitle className='hidden'></DrawerTitle>
-							<Menu menuItems={menuItems} />
-						</DrawerHeader>
-					</DrawerContent>
-				</Drawer>
+						</DrawerTrigger>
+						<DrawerContent className="bg-black border-l border-sky-100 justify-center">
+							<DrawerClose className='absolute text-white top-[19px] right-[15px]'>
+								<Image
+									src={closeIcon}
+									alt='Home'
+									width={35}
+									height={35}
+									className='cursor-pointer'
+								/>
+							</DrawerClose>
+							<DrawerHeader className='pl-10'>
+								<DrawerTitle className='hidden'></DrawerTitle>
+								<Menu menuItems={menuItems} />
+							</DrawerHeader>
+						</DrawerContent>
+					</Drawer>
+				</div>
 			</div>
 		</header>
 	)

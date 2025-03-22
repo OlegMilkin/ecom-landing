@@ -5,7 +5,12 @@ import usePageData from './use-page-data';
 import { Hero } from '@/components/hero/Hero';
 
 export default function Home() {
-  const { experticeList, achievementsList } = usePageData();
+  const {
+    experticeList,
+    achievementsList,
+    servicesList,
+    technologiesList,
+  } = usePageData();
 
   return (
     <>
@@ -22,7 +27,10 @@ export default function Home() {
       {/* Expertise section end */}
 
       {/* Services & Technologies start */}
-      <ServicesAndTechnologies />
+      <ServicesAndTechnologies 
+        servicesList={servicesList}
+        technologiesList={technologiesList}
+      />
       {/* Services & Technologies end */}
     </>
   );

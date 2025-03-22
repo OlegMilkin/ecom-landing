@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 interface MenuProps {
   menuItems: {
@@ -11,12 +11,7 @@ interface MenuProps {
 }
 
 export function Menu({menuItems, menuClass}: MenuProps) {
-	const scrollToAnchor = (anchorId: string) => {
-    const anchor = document.querySelector(anchorId);
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
 	return (
 		<nav className={menuClass}>
@@ -26,9 +21,6 @@ export function Menu({menuItems, menuClass}: MenuProps) {
 						<Link
 							className="uppercase text-2xl lg:text-base text-gradient text-white" 
 							href={menuItem.link}
-							onClick={() => {
-								scrollToAnchor(menuItem.link);
-							}}
 						>
 							{menuItem.title}
 						</Link>

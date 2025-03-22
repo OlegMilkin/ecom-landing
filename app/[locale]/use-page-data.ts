@@ -28,32 +28,66 @@ const usePageData = () => {
   const achievementsList = [{
     title: '~$100 billion',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '0.8%',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '~30',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '25+',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '2024',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '1,200+',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '24/7',
     description: 'Lorem ipsum dolor sit amet'
-  }, {
+  },{
     title: '5 billion+',
     description: 'Lorem ipsum dolor sit amet'
   }];
 
+  const servicesList = [{
+    title: 'Aplication',
+    icon: 'ss1.png',
+  },{
+    title: 'Website',
+    icon: 'ss2.png',
+  },{
+    title: 'Database',
+    icon: 'ss3.png',
+  },{
+    title: 'Warehouse',
+    icon: 'ss4.png',
+  },]
+
+  const technologiesList = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpg',
+    '5.jpg',
+    '6.jpg',
+    '7.jpg',
+    '8.jpg',
+    '9.jpg',
+    '10.jpg',
+    '11.jpg',
+    '12.jpg',
+    '13.jpg',
+    '14.jpg',
+    '15.jpg',
+  ]
+
   return {
     experticeList,
     achievementsList,
+    servicesList,
+    technologiesList,
   }
 }
 

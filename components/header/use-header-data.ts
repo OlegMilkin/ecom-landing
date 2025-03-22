@@ -1,9 +1,9 @@
 const usePageData = () => {
   const menuItems = [{
-    link: '#archievements',
+    link: '/#archievements',
     title: 'Achievements'
   }, {
-    link: '#expertise',
+    link: '/#expertise',
     title: 'Expertise'
   }, {
     link: '#',
