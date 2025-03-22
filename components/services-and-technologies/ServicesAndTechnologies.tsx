@@ -28,7 +28,7 @@ export function ServicesAndTechnologies({servicesList, technologiesList}: Servic
         </div>
       </section>
       <section className='section-gradient'>
-        <div className='container flex flex-col md:flex-row justify-between py-11 md:py-24 gap-5 md:gap-0 bg-none md:bg-[url(/core.png)] bg-no-repeat bg-center'>
+        <div className='container flex flex-col md:flex-row justify-between py-11 md:py-24 gap-5 md:gap-0 bg-none md:bg-[url(/core.png)] bg-no-repeat bg-center items-center'>
           <div className='w-full md:w-max flex flex-row md:flex-col gap-5 md:gap-7 flex-wrap'>
             {servicesList.map(item => {
               const id = useId();
