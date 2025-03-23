@@ -3,10 +3,14 @@ import { PricingCard } from './PricingCard';
 import { useId } from 'react';
 
 interface PricingProps {
-  pricingList: PricingItemType[]
+  pricingList: PricingItemType[],
+  isVisible: boolean
 }
 
-export function Pricing({ pricingList }: PricingProps) {
+export function Pricing({ pricingList, isVisible }: PricingProps) {
+
+  if(!isVisible) return null;
+
   return (
     <section className='flex flex-col items-center' id="pricing">
       <div className='container'>

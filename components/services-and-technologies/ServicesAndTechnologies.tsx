@@ -40,7 +40,7 @@ export function ServicesAndTechnologies({servicesList, technologiesList}: Servic
             {technologiesList.map(item => {
               const id = useId();  
 
-              return <Image key={id} src={`/technologies/${item}`} alt="" width="82" height="82" className='w-[54px] md:w-[82px] ' />
+              return <Image key={id} src={`/technologies/${item}`} alt="" width="82" height="82" className='w-[54px] md:w-[82px]' />
             })}
           </div>
         </div>

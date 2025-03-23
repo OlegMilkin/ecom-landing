@@ -9,10 +9,10 @@ const usePageData = () => {
     link: '/#pricing',
     title: 'Pricing'
   }, {
-    link: '#',
+    link: '/#partners',
     title: 'Partners'
   }, {
-    link: '#',
+    link: '/#reviews',
     title: 'Reviewers'
   }];
 

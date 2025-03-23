@@ -4,6 +4,8 @@ import { ServicesAndTechnologies } from '@/components/services-and-technologies/
 import usePageData from './use-page-data';
 import { Hero } from '@/components/hero/Hero';
 import { Pricing } from '@/components/pricing/Pricing';
+import { Partners } from '@/components/partners/Partners';
+import { Reviews } from '@/components/reviews/Reviews';
 
 export default function Home() {
   const {
@@ -11,7 +13,8 @@ export default function Home() {
     achievementsList,
     servicesList,
     technologiesList,
-    PricingList,
+    pricingList,
+    partnersList,
   } = usePageData();
 
   return (
@@ -36,8 +39,16 @@ export default function Home() {
       {/* Services & Technologies end */}
 
       {/* Pricing start */}
-      <Pricing pricingList={PricingList} />
+      <Pricing pricingList={pricingList} isVisible={true} />
       {/* Pricing end */}
+
+      {/* Our Partners start */}
+      <Partners partnersList={partnersList} />
+      {/* Our Partners end */}
+
+      {/* Customer Reviews start */}
+      <Reviews />
+      {/* Customer Reviews end */}
     </>
   );
 }

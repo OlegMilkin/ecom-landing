@@ -83,7 +83,22 @@ const usePageData = () => {
     '15.jpg',
   ];
 
-  const PricingList = [{
+  const partnersList = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpg',
+    '5.jpg',
+    '3.jpg',
+    '7.jpg',
+    '1.jpg',
+    '9.jpg',
+    '3.jpg',
+    '2.jpg',
+    '10.jpg',
+  ];
+
+  const pricingList = [{
     price: '$45',
     title: 'Company',
     description: 'Automation plus enterprise-grade features.',
@@ -105,7 +120,8 @@ const usePageData = () => {
     achievementsList,
     servicesList,
     technologiesList,
-    PricingList,
+    pricingList,
+    partnersList,
   }
 }
 
