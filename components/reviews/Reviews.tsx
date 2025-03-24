@@ -16,7 +16,7 @@ export function Reviews({ reviewList }: ReviewsProps) {
   if (reviewList.length === 0) return null;
 
   return (
-    <div className="container">
+    <div className="container" id="reviews">
       <div className="max-w-[100%] md:max-w-[80%] mx-auto">
       <h2 className='text-4xl lg:text-6xl text-center my-4 lg:my-11'>
         Customer Reviews
