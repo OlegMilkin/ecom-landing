@@ -1,13 +1,20 @@
+import { useId } from 'react';
+import { ReviewItem } from './ReviewItem';
+import { reviewItemType } from './reviewsTypes';
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel';
 
+interface ReviewsProps {
+  reviewList: reviewItemType[]
+}
 
-export function Reviews() {
+export function Reviews({ reviewList }: ReviewsProps) {
+  if (reviewList.length === 0) return null;
+
   return (
     <div className="container">
       <div className="max-w-[100%] md:max-w-[80%] mx-auto">
@@ -20,26 +27,15 @@ export function Reviews() {
         }}
       >
         <CarouselContent className="-ml-11">
-          <CarouselItem className="basis-1/1 md:basis-1/2 pl-11">
-            <div className="bg-white text-black">
-              1
-            </div>
-          </CarouselItem>
-          <CarouselItem className="basis-1/1 md:basis-1/2 pl-11">
-            <div className="bg-white text-black">
-              2
-            </div>
-          </CarouselItem>
-          <CarouselItem className="basis-1/1 md:basis-1/2 pl-11">
-            <div className="bg-white text-black">
-              3
-            </div>
-          </CarouselItem>
+          {reviewList.map(item => {
+            const id = useId();
+
+            return <ReviewItem item={item} key={id} />
+          })}         
         </CarouselContent>
         <CarouselPrevious className="bg-[url(/prev.svg)] bg-black w-[73px] h-[73px] border-none carousel-nav hidden md:block left-[-12.5%]" />
         <CarouselNext className="bg-[url(/next.svg)] bg-black w-[73px] h-[73px] border-none carousel-nav hidden md:block right-[-12.5%]" />
       </Carousel>
-
     </div>
     </div>
   )

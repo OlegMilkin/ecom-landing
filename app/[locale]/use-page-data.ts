@@ -115,6 +115,20 @@ const usePageData = () => {
     advantages: ['Multi-step Zap', 'Unlimited Premium', 'Unlimited Users Team', 'Advanced Admin', 'Custom Data Retention'],
   }];
 
+  const reviewList = [{
+    review: 'Lorem ipsum dolor sit amet consectetur. Risus lacus ullamcorper lectus platea mi leo volutpat. Pharetra nunc fringilla pellentesque dolor. Amet mauris quam egestas vulputate sem blandit consectetur. Viverra quisque non tellus sollicitudin.',
+    reviewerName: 'K Oiwake'
+  },{
+    review: 'Lorem ipsum dolor sit amet consectetur. Risus lacus ullamcorper lectus platea mi leo volutpat. Pharetra nunc fringilla pellentesque dolor. Amet mauris quam egestas vulputate sem blandit consectetur. Viverra quisque non tellus sollicitudin.',
+    reviewerName: 'K Oiwake'
+  },{
+    review: 'Lorem ipsum dolor sit amet consectetur. Risus lacus ullamcorper lectus platea mi leo volutpat. Pharetra nunc fringilla pellentesque dolor. Amet mauris quam egestas vulputate sem blandit consectetur. Viverra quisque non tellus sollicitudin.',
+    reviewerName: 'K Oiwake'
+  },{
+    review: 'Lorem ipsum dolor sit amet consectetur. Risus lacus ullamcorper lectus platea mi leo volutpat. Pharetra nunc fringilla pellentesque dolor. Amet mauris quam egestas vulputate sem blandit consectetur. Viverra quisque non tellus sollicitudin.',
+    reviewerName: 'K Oiwake'
+  }];
+
   return {
     experticeList,
     achievementsList,
@@ -122,6 +136,7 @@ const usePageData = () => {
     technologiesList,
     pricingList,
     partnersList,
+    reviewList,
   }
 }
 

@@ -15,6 +15,7 @@ export default function Home() {
     technologiesList,
     pricingList,
     partnersList,
+    reviewList,
   } = usePageData();
 
   return (
@@ -47,7 +48,7 @@ export default function Home() {
       {/* Our Partners end */}
 
       {/* Customer Reviews start */}
-      <Reviews />
+      <Reviews reviewList={reviewList} />
       {/* Customer Reviews end */}
     </>
   );
