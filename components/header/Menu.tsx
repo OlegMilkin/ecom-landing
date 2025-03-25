@@ -1,25 +1,34 @@
 'use client';
 
 import { Link } from '@/i18n/navigation';
+import { twMerge } from 'tailwind-merge';
 
 interface MenuProps {
   menuItems: {
 		link: string;
 		title: string;
 	}[],
-	menuClass?: string
+	navClass?: string,
+	ulClass?: string,
+	liClass?: string,
+	linkClass?: string
 }
 
-export function Menu({menuItems, menuClass}: MenuProps) {
-
+export function Menu({
+	menuItems,
+	navClass,
+	ulClass,
+	liClass,
+	linkClass
+}: MenuProps) {
 
 	return (
-		<nav className={menuClass}>
-			<ul className="flex gap-11 lg:gap-7 flex-col lg:flex-row">
+		<nav className={navClass}>
+			<ul className={twMerge('flex flex-col', ulClass)}>
 				{menuItems.map(menuItem => (
-					<li key={menuItem.title}>
+					<li key={menuItem.title} className={liClass}>
 						<Link
-							className="uppercase text-2xl lg:text-base text-gradient text-white" 
+							className={twMerge('text-gradient', linkClass) }
 							href={menuItem.link}
 						>
 							{menuItem.title}

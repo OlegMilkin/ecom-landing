@@ -3,8 +3,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import './globals.css';
 import { Header } from '@/components/header/Header';
+import { Footer } from '@/components/footer/Footer';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: "Ecom Shape",
@@ -31,7 +32,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}
-          Footer
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,4 +1,21 @@
 const usePageData = () => {
+  const menuItems = [{
+    link: '/#archievements',
+    title: 'Achievements'
+  }, {
+    link: '/#expertise',
+    title: 'Expertise'
+  }, {
+    link: '/#pricing',
+    title: 'Pricing'
+  }, {
+    link: '/#partners',
+    title: 'Partners'
+  }, {
+    link: '/#reviews',
+    title: 'Reviewers'
+  }];
+  
   const experticeList = [{
     title: 'Lorem ipsum dolor sit amet consectetur.',
     description: 'Lorem ipsum dolor sit amet consectetur. Nunc sed cursus tellus at in consectetur. Nec eu fringilla commodo ut duis pretium egestas tristique. Tincidunt adipiscing sit nulla nec morbi velit cursus. Viverra nunc donec vestibulum sit tellus molestie diam.',
@@ -137,6 +154,7 @@ const usePageData = () => {
     pricingList,
     partnersList,
     reviewList,
+    menuItems,
   }
 }
 

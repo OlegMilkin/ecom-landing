@@ -18,11 +18,11 @@ import { Menu } from '@/components/header/Menu';
 import { Button } from '@/components/ui/Button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { languages } from '@/i18n/localesConfig';
-import useHeaderData from './use-header-data';
+import usePageData from '@/app/[locale]/use-page-data';
 
 export function Header() {
 	const t = useTranslations('HomePage');
-	const { menuItems } = useHeaderData();
+	const { menuItems } = usePageData();
 
 	return (
 		<header className="min-h-[80px] sticky top-0 bg-black z-10">
@@ -43,7 +43,12 @@ export function Header() {
 						className='block lg:hidden'
 					/>
 				</Link>
-				<Menu menuItems={menuItems} menuClass='hidden lg:block' />
+				<Menu 
+					menuItems={menuItems}
+					navClass='hidden lg:block'
+					ulClass='gap-11 lg:gap-7 lg:flex-row'
+					linkClass='uppercase text-base '
+				/>
 				<div className="flex items-center gap-6">
 					<LanguageSwitcher languages={languages} />
 					<Link href="#" className='block lg:hidden'>
@@ -82,7 +87,11 @@ export function Header() {
 							</DrawerClose>
 							<DrawerHeader className='pl-10'>
 								<DrawerTitle className='hidden'></DrawerTitle>
-								<Menu menuItems={menuItems} />
+								<Menu 
+									menuItems={menuItems}
+									ulClass='gap-11 lg:gap-7 lg:flex-row'
+									linkClass='uppercase text-2xl'
+								/>
 							</DrawerHeader>
 						</DrawerContent>
 					</Drawer>

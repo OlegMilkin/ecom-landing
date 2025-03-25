@@ -20,6 +20,10 @@
   @apply px-3 xl:px-0 w-full max-w-[1200px] mx-auto text-white;
 }
 
+.text-gradient {
+  color: var(--color-white);
+}
+
 .text-gradient:hover, .menu-active {
   background: linear-gradient(46deg, var(--color-sky-100) 5.23%, var(--color-sky-200) 50%, var(--color-sky-300) 100%);
   background-clip: text;
