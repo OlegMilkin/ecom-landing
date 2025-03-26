@@ -5,9 +5,13 @@ import Image from 'next/image';
 import mobileLogo from '@/public/mobile-logo.svg';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
+import { useId } from 'react';
 
 export function Footer() {
-  const { menuItems } = usePageData();
+  const { 
+    menuItems,
+    socialLinks,
+  } = usePageData();
   const t = useTranslations('HomePage');
 
   return (
@@ -23,7 +27,29 @@ export function Footer() {
                 height={114}
               />
             </Link>
+            {socialLinks?.length > 0 && (
+              <ul className='flex gap-10 mt-20 mb-12'>
+                {socialLinks.map(item => {
+                  const id = useId();
 
+                  return <li key={id}>
+                    <Link href={item.link}>
+                      <Image
+                        src={item.cover}
+                        alt=""
+                        width="36"
+                        height="36"
+                      />
+                    </Link>
+                </li>
+                })}
+              </ul>
+            )}
+            <div className='text-[11px] mb-[13px] flex gap-6'>
+              <Link href="/" className='underline hover:no-underline'>Privacy Policy</Link>
+              <Link href="/" className='underline hover:no-underline'>Terms of Service</Link>
+            </div>
+            <p className='text-[11px]'>Copyright @ 2025 Ecom Shape</p>
           </div>
           <div className="hidden md:block">
             <Menu 

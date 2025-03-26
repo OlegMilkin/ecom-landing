@@ -146,6 +146,17 @@ const usePageData = () => {
     reviewerName: 'K Oiwake'
   }];
 
+  const socialLinks = [{
+    cover: 'yt.svg',
+    link: '/'
+  },{
+    cover: 'fb.svg',
+    link: '/'
+  },{
+    cover: 'tw.svg',
+    link: '/'
+  }, ]
+
   return {
     experticeList,
     achievementsList,
@@ -155,6 +166,7 @@ const usePageData = () => {
     partnersList,
     reviewList,
     menuItems,
+    socialLinks,
   }
 }
 
