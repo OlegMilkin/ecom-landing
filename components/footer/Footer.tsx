@@ -17,8 +17,8 @@ export function Footer() {
   return (
     <section className='border-t border-grey'>
       <div className="container text-white">
-        <div className="grid grid-col-1 md:grid-cols-3 pb-9 md:pb-11 pt-5 md:pt-11 justify-items-center md:justify-items-start">
-          <div>
+        <div className="flex pb-9 md:pb-11 pt-5 md:pt-11 justify-center md:justify-between">
+          <div className='flex flex-col items-center md:items-start'>
             <Link href='/' className=''>
               <Image
                 src={mobileLogo}
@@ -58,7 +58,7 @@ export function Footer() {
               ulClass='gap-7'
             /> 
           </div>
-          <div className="hidden md:block w-[250px] ml-auto mr-5">
+          <div className="hidden md:block w-[250px] mr-5">
             <h4 className='text-[23px] font-bold mb-11'>
               Have questions? Let's get in touch!
             </h4>
