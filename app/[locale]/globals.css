@@ -4,12 +4,14 @@
 
 @theme {
   /* Colors */
-  --color-black: #000000;
-  --color-white: #FFFFFF;
-  --color-grey:  #413e3e;
-  --color-sky-100: #70DCEA;
-  --color-sky-200: #3CA3D0;
-  --color-sky-300: #4093C3;
+  --color-black:    #000000;
+  --color-white:    #FFFFFF;
+  --color-grey:     #413e3e;
+  --color-grey-100: #A0A2A3;
+  --color-red:      #E81313;
+  --color-sky-100:  #70DCEA;
+  --color-sky-200:  #3CA3D0;
+  --color-sky-300:  #4093C3;
   
   /* Fonts */
   --font-inter: "Inter", sans-serif; 
@@ -59,6 +61,18 @@
   svg {
     display: none;
   }
+}
+
+.input {
+  @apply outline-grey outline-3 outline-offset-0 focus:outline-sky-200 rounded-[20px] placeholder:text-sm md:placeholder:text-base placeholder:text-grey-100 py-[13px] md:py-[15px] px-[11px] w-full;
+}
+
+.input-row {
+  @apply mb-[25px] md:mb-10 relative;
+}
+
+.error-msg {
+  @apply absolute left-[11px] top-[55px] md:top-[60px] text-[8px] md:text-xs text-red;
 }
 
 @media (max-width: 768px) {
