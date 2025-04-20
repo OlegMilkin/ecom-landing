@@ -67,6 +67,10 @@
   @apply outline-grey outline-3 outline-offset-0 focus:outline-sky-200 rounded-[20px] placeholder:text-sm md:placeholder:text-base placeholder:text-grey-100 py-[13px] md:py-[15px] px-[11px] w-full;
 }
 
+.input-error {
+  @apply outline-red; 
+}
+
 .input-row {
   @apply mb-[25px] md:mb-10 relative;
 }

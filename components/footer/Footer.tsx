@@ -35,7 +35,7 @@ export function Footer() {
                   return <li key={id}>
                     <Link href={item.link}>
                       <Image
-                        src={item.cover}
+                        src={`/${item.cover}`}
                         alt=""
                         width="36"
                         height="36"

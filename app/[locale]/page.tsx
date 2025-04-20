@@ -6,8 +6,9 @@ import { Hero } from '@/components/hero/Hero';
 import { Pricing } from '@/components/pricing/Pricing';
 import { Partners } from '@/components/partners/Partners';
 import { Reviews } from '@/components/reviews/Reviews';
+import { getHomePageData } from '@/lib/api/fetch-home-page-data';
 
-export default function Home() {
+export default async function Home() {
   const {
     experticeList,
     achievementsList,
@@ -17,6 +18,9 @@ export default function Home() {
     partnersList,
     reviewList,
   } = usePageData();
+
+  const homePageData = await getHomePageData();
+  console.log('homePageData', homePageData);
 
   return (
     <>
