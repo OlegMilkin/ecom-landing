@@ -74,9 +74,7 @@ export const getHomePageData = async () => {
   try {
     const { data } = await instance.get(`${process.env.BASE_URL}/api/home-page?${queryString}`);
 
-    console.log(new HomePageModel(data.data))
-
-    return data.data
+    return new HomePageModel(data.data);
   } catch(e) {
     console.log(e)
   }

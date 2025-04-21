@@ -6,6 +6,8 @@ export interface ArchievementsDto {
   achievement: AchivementItemInterface[];
   description: string;
   title: string;
+  isVisible: boolean;
+  anchorHref: string;
 }
 
 export interface AchivementsModelInterface {
@@ -14,6 +16,8 @@ export interface AchivementsModelInterface {
   achievements: AchivementItemInterface[];
   description: string;
   title: string;
+  isVisible: boolean;
+  anchorHref: string;
 }
 
 export class AchivementsModel {
@@ -22,6 +26,8 @@ export class AchivementsModel {
   achievements: AchivementItemInterface[];
   description: string;
   title: string;
+  isVisible: boolean;
+  anchorHref: string;
 
   constructor (data: ArchievementsDto) {
     this.id = data.id;
@@ -29,5 +35,7 @@ export class AchivementsModel {
     this.achievements = data.achievement.map((item: AchivementItemInterface) => new AchivementItemModel(item)) || [];
     this.description = data.description || '';
     this.title = data.title || '';
+    this.isVisible = data?.isVisible;
+    this.anchorHref = data?.anchorHref || '';
   }
 }

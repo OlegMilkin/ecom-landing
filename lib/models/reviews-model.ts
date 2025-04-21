@@ -1,36 +1,36 @@
-import { ExpertiseItemModel, ExpertiseItemDto } from '@/lib/models/expertise-item-model'; 
+import { ReviewItemModel, ReviewItemDto } from  '@/lib/models/review-item-model';
 
-export interface ExpertiseDto {
+export interface ReviewsDto {
   id: number;
   __component: string;
   title: string;
-  expertise: ExpertiseItemDto[];
+  reviewItem: ReviewItemDto[];
   isVisible: boolean;
   anchorHref: string;
 }
 
-export interface ExpertiseModelInterface {
+export interface ReviewsModelInterface {
   id: number;
   blockName: string;
   title: string;
-  expertises: ExpertiseItemModel[];
+  reviewItems: ReviewItemModel[];
   isVisible: boolean;
   anchorHref: string; 
 }
 
-export class ExpertiseModel {
+export class ReviewsModel {
   id: number;
   blockName: string;
   title: string;
-  expertises: ExpertiseItemModel[];
+  reviewItems: ReviewItemModel[];
   isVisible: boolean;
   anchorHref: string;
 
-  constructor (data: ExpertiseDto) {
+  constructor (data: ReviewsDto) {
     this.id = data.id;
     this.blockName = data.__component;
     this.title = data.title || '';
-    this.expertises = data.expertise.map((item: ExpertiseItemDto) => new ExpertiseItemModel(item)) || [];
+    this.reviewItems = data.reviewItem.map((item: ReviewItemDto) => new ReviewItemModel(item)) || [];
     this.isVisible = data?.isVisible;
     this.anchorHref = data?.anchorHref || '';
   }

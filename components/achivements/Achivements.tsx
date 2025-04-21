@@ -1,36 +1,27 @@
 import { AchievementItem } from './AchievementItem';
-import { achievementsType } from './achievements-types';
-import { useId } from 'react';
+import { AchivementsModelInterface } from '@/lib/models/achievements-model';
 
-interface AchievementsProps {
-  achievements: achievementsType[],
-}
-
-export function Achivements({ achievements }: AchievementsProps) {
-  if (achievements.length <= 0) return null;
+export function Achivements({ 
+  achievements,
+  anchorHref,
+  description,
+  isVisible,
+  title
+ }: AchivementsModelInterface) {
+  if (achievements.length <= 0 || !isVisible) return null;
 
   return (
-    <section className='flex flex-col items-center' id="archievements">
+    <section className='flex flex-col items-center' id={anchorHref}>
       <div className='container'>
         <h2 className='text-4xl lg:text-6xl text-center my-4 lg:my-11'>
-          Achievements
+          {title}
         </h2>
         <p className='max-w-[980px] mx-auto text-center lg:text-xl text-sm mb-4 lg:mb-16'>
-          Discover the numbers behind our success.
-          These figures showcase the trust our clients place in us and our relentless pursuit of excellence.
-          Every statistic reflects our unwavering commitment to quality,
-          innovation, and delivering results that exceed expectations.
-          From longstanding partnerships to groundbreaking achievements,
-          our journey is built on a foundation of trust and expertise.
-          Let our track record speak for itself as we continue to grow and create lasting value for our clients.
+          {description}
         </p>
         <div className='overflow-hidden w-full'>
           <div className="grid grid-cols-2 lg:grid-cols-4 text-white text-center mb-[-1px] mr-[-1px]">
-            {achievements.map(item => {
-              const id = useId();
-
-              return <AchievementItem item={item} key={id} />
-            })}
+            {achievements.map(item => <AchievementItem {...item} key={item.id} />)}
           </div>
         </div>
       </div>

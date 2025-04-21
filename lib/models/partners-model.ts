@@ -1,36 +1,36 @@
-import { ExpertiseItemModel, ExpertiseItemDto } from '@/lib/models/expertise-item-model'; 
+import { PartnerItemModel, PartnerItemDto } from  '@/lib/models/partner-item-model' 
 
-export interface ExpertiseDto {
+export interface PartnersDto {
   id: number;
   __component: string;
   title: string;
-  expertise: ExpertiseItemDto[];
+  partnerIcon: PartnerItemDto[];
   isVisible: boolean;
   anchorHref: string;
 }
 
-export interface ExpertiseModelInterface {
+export interface PartnersModelInterface {
   id: number;
   blockName: string;
   title: string;
-  expertises: ExpertiseItemModel[];
+  partnerIcons: PartnerItemModel[];
   isVisible: boolean;
   anchorHref: string; 
 }
 
-export class ExpertiseModel {
+export class PartnersModel {
   id: number;
   blockName: string;
   title: string;
-  expertises: ExpertiseItemModel[];
+  partnerIcons: PartnerItemModel[];
   isVisible: boolean;
   anchorHref: string;
 
-  constructor (data: ExpertiseDto) {
+  constructor (data: PartnersDto) {
     this.id = data.id;
     this.blockName = data.__component;
     this.title = data.title || '';
-    this.expertises = data.expertise.map((item: ExpertiseItemDto) => new ExpertiseItemModel(item)) || [];
+    this.partnerIcons = data.partnerIcon.map((item: PartnerItemDto) => new PartnerItemModel(item)) || [];
     this.isVisible = data?.isVisible;
     this.anchorHref = data?.anchorHref || '';
   }
