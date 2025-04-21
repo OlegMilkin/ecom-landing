@@ -1,5 +1,6 @@
 import qs from 'qs';
 import { instance } from './api-service';
+import { GlobalDataModel } from '@/lib/models/global-data-model';
 
 const populateParams = {
   headerDesktopLogo: {
@@ -20,8 +21,9 @@ const queryString = qs.stringify({
 
 export const getGlobalData = async () => {
   try {
-    const { data } = await instance.get(`${process.env.BASE_URL}/api/home-page?${queryString}`);
-    return data.data
+    const { data } = await instance.get(`${process.env.BASE_URL}/api/global?${queryString}`);
+
+    return new GlobalDataModel(data.data);
   } catch(e) {
     console.log(e)
   }
