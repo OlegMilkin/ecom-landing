@@ -1,33 +1,28 @@
-import { PricingItemType } from './pricing-type';
 import { PricingCard } from './PricingCard';
-import { useId } from 'react';
+import { PricingModelInterface } from '@/lib/models/pricing-model';
 
-interface PricingProps {
-  pricingList: PricingItemType[],
-  isVisible: boolean
-}
-
-export function Pricing({ pricingList, isVisible }: PricingProps) {
+export function Pricing({ 
+  pricingItems,
+  isVisible,
+  title,
+  description,
+  anchorHref,
+ }: PricingModelInterface) {
 
   if(!isVisible) return null;
 
   return (
-    <section className='flex flex-col items-center' id="pricing">
+    <section className='flex flex-col items-center' id={anchorHref}>
       <div className='container'>
         <h2 className='text-4xl lg:text-6xl text-center my-4 lg:my-11'>
-          Pricing
+          {title}
         </h2>
         <p className='max-w-[980px] mx-auto text-center lg:text-xl text-sm mb-10 lg:mb-16'>
-          Transparent and flexible pricing designed to fit your project needs and budget.
-          Whether you’re a startup, a growing business, or a large enterprise, we have the right solution for you
+          {description}
         </p>
         <div className='max-w-[960px] mx-auto flex flex-col md:flex-row items-center md:justify-between gap-10 md:gap-12'>
-          {pricingList.length > 0 && (
-            pricingList.map(item => {
-              const id = useId();
-  
-              return <PricingCard key={id} item={item} />
-            })
+          {pricingItems.length > 0 && (
+            pricingItems.map(item => <PricingCard key={item.id} {...item} />)
           )}
         </div>
       </div>

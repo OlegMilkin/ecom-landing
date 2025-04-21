@@ -1,10 +1,10 @@
-import { ExperticeItemType } from './expertise-types';
 import { twMerge } from 'tailwind-merge';
 import Image from 'next/image';
+import { ExpertiseItemInterface } from '@/lib/models/expertise-item-model'
 
 interface ExpertiseItemProps {
-  item: ExperticeItemType,
-  index: number
+  item: ExpertiseItemInterface,
+  index: number,
 }
 
 export function ExpertiseItem({item, index}: ExpertiseItemProps) {
@@ -23,9 +23,10 @@ export function ExpertiseItem({item, index}: ExpertiseItemProps) {
     <div className={twMerge("col-span-1 @container border-1 border-l-18 border-sky-200 rounded-2xl overflow-hidden", itemClass)}>
       <div className='relative aspect-[2/1.35] @min-[400px]:aspect-[2/1.26] @min-[600px]:aspect-[2/0.79] object-center'>
         <Image 
-          src={item.cover}
+          src={`${process.env.BASE_URL}${item.cover}`}
           fill={true}
-          alt=''
+          alt={item.coverAlt}
+          title={item.coverTitle}
           className='object-cover'
         />
       </div>
