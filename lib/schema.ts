@@ -5,15 +5,13 @@ export const contactFormSchema = z.object({
     .string()
     .nonempty({ message: "Name is required" }),
   lastName: z
-  .string()
-  .nonempty({ message: "Last name is required" }),
+  .string(),
   email: z
     .string()
     .nonempty({ message: "Email is required." })
     .email({ message: "Invalid email address." }),
   phone: z
-    .string()
-    .nonempty({ message: "Phone is required." }),
+    .string(),
   message: z
     .string()
     .nonempty({ message: "Message is required." }),

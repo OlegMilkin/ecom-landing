@@ -1,5 +1,23 @@
 {
-    "HomePage": {
-        "contactUs": "Зв'язатися"
-    }
+  "Global": {
+    "contactUs": "Зв'язатися з нами",
+    "privacyPolicy": "Політика конфіденційності",
+    "termsOfService": "Умови використання",
+    "send": "Надіслати"
+  },
+  "FormFields": {
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "email": "Електронна пошта",
+    "phone": "Телефон",
+    "message": "Повідомлення"
+  },
+  "Messages": {
+    "somethingWrong": "Щось пішло не так!",
+    "emailSent": "Електронний лист відправлено!",
+    "requiredName": "Ім'я обов'язкове",
+    "requiredEmail": "Електронна пошта обов'язкова",
+    "invalidEmail": "Недійсна електронна адреса",
+    "msgRequired": "Повідомлення обов'язкове"
+  }
 }

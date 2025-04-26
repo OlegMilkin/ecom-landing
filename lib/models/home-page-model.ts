@@ -32,21 +32,30 @@ export type HomePageBlockInterfaces =
   PartnersModelInterface |
   ReviewsModelInterface
 
-const findBlock = (data: HomePageDto, blockName: string): HomePageBlockDto => {
-  return data.block.find(block => block?.__component === blockName);
-}
-
 export function createHomePageModel (data: HomePageDto) {
-  const blocks = [
-    createHeroModel(findBlock(data, 'section.hero') as HeroDto),
-    createAchievementsModel(findBlock(data, 'section.achievements') as ArchievementsDto),
-    createExpertiseModel(findBlock(data, 'section.expertise') as ExpertiseDto),
-    createServiceModel(findBlock(data, 'section.services') as ServiceDto),
-    createTechnologiesModel(findBlock(data, 'section.technologies') as TechnologiesDto),
-    createPricingModel(findBlock(data, 'section.pricing') as PricingDto),
-    createPartnersModel(findBlock(data, 'section.partners') as PartnersDto),
-    createReviewsModel(findBlock(data, 'section.reviews') as ReviewsDto),
-  ];
+
+  const blocks = data.block.map((block: HomePageBlockDto) => {
+      switch (block.__component) {
+        case 'section.hero': 
+          return createHeroModel(block);
+        case 'section.achievements': 
+          return createAchievementsModel(block);
+        case 'section.expertise': 
+          return createExpertiseModel(block);
+        case 'section.services': 
+          return createServiceModel(block);
+        case 'section.technologies': 
+          return createTechnologiesModel(block);
+        case 'section.pricing': 
+          return createPricingModel(block);  
+        case 'section.partners': 
+          return createPartnersModel(block);  
+        case 'section.reviews': 
+          return createReviewsModel(block);  
+        default:
+          return [];
+      }
+    })
 
   return blocks;
 }

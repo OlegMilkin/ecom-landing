@@ -1,5 +1,23 @@
 {
-    "HomePage": {
-        "contactUs": "Kontaktieren"
-    }
+  "Global": {
+    "contactUs": "Kontaktieren Sie uns",
+    "privacyPolicy": "Datenschutzbestimmungen",
+    "termsOfService": "Nutzungsbedingungen",
+    "send": "Senden"
+  },
+  "FormFields": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht"
+  },
+  "Messages": {
+    "somethingWrong": "Etwas ist schiefgelaufen!",
+    "emailSent": "E-Mail gesendet!",
+    "requiredName": "Name ist erforderlich",
+    "requiredEmail": "E-Mail ist erforderlich",
+    "invalidEmail": "Ungültige E-Mail-Adresse",
+    "msgRequired": "Nachricht ist erforderlich"
+  }
 }

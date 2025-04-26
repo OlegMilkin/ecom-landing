@@ -13,14 +13,14 @@ export function Footer({
     footerSubHeadline,
   }: GlobalDataModelInterface) {
 
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Global');
 
   return (
     <section className='border-t border-grey'>
       <div className="container text-white">
         <div className="flex pb-9 md:pb-11 pt-5 md:pt-11 justify-center md:justify-between">
           <div className='flex flex-col items-center md:items-start'>
-            <Link href='/' className=''>
+            <Link href='/'>
               <Image
                 src={mobileLogo}
                 alt='Home'
@@ -45,8 +45,8 @@ export function Footer({
               </ul>
             )}
             <div className='text-[11px] mb-[13px] flex gap-6'>
-              <Link href="/" className='underline hover:no-underline'>Privacy Policy</Link>
-              <Link href="/" className='underline hover:no-underline'>Terms of Service</Link>
+              <Link href="/policy" className='underline hover:no-underline'>{t('privacyPolicy')}</Link>
+              <Link href="/terms" className='underline hover:no-underline'>{t('termsOfService')}</Link>
             </div>
             <p className='text-[11px]'>Copyright @ 2025 Ecom Shape</p>
           </div>

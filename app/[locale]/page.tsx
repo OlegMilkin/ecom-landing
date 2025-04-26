@@ -10,12 +10,11 @@ import { HomePageBlockInterfaces } from '@/lib/models/home-page-model';
 import { Technologies } from '@/components/technologies/Technologies';
 import { getLocale } from 'next-intl/server';
 
-
 export default async function Home() {
   const locale = await getLocale();
   const homePageData = await getHomePageData(locale);
 
-  if (!homePageData) return null;
+  if (!homePageData || homePageData.length <= 0) return null;
 
   const renderBlocks = (data: HomePageBlockInterfaces[]) => {
     return data.map((block: HomePageBlockInterfaces) => {

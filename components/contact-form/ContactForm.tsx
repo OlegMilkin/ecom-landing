@@ -8,10 +8,15 @@ import { twMerge } from 'tailwind-merge';
 import { contactFormSchema } from '@/lib/schema';
 import { sendEmail } from '@/app/_actions';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 
 type contactFormInputs = z.infer<typeof contactFormSchema>
 
 export default function ContactForm() {
+
+  const t = useTranslations('Global');
+  const f = useTranslations('FormFields');
+  const m = useTranslations('Messages');
 
   const {
     register,
@@ -27,13 +32,13 @@ export default function ContactForm() {
     const result = await sendEmail(data);
 
     if (result?.success) {
-      toast.success('Email sent!');   
+      toast.success(m('emailSent'));   
       reset();
       return
     }
 
     //Toast error
-    toast.error('Something went wrong!');
+    toast.error(m('somethingWrong'));
   }
 
   return (
@@ -43,7 +48,7 @@ export default function ContactForm() {
           <input
             {...register('name')}
             type="text" 
-            placeholder="First name"
+            placeholder={f('firstName')}
             className={twMerge('input', errors.name && 'input-error')}
           />
           { errors.name && <span className='error-msg'>{errors.name.message}</span> }
@@ -52,7 +57,7 @@ export default function ContactForm() {
           <input
             {...register('lastName')}
             type="text"
-            placeholder="Last name"
+            placeholder={f('lastName')}
             className={twMerge('input', errors.lastName && 'input-error')}
           />
           { errors.lastName && <span className='error-msg'>{errors.lastName.message}</span> }
@@ -62,7 +67,7 @@ export default function ContactForm() {
         <input
           {...register('email')}
           type="email"
-          placeholder="Email"
+          placeholder={f('email')}
           className={twMerge('input', errors.email && 'input-error')}
         />
         { errors.email && <span className='error-msg'>{errors.email.message}</span> }
@@ -71,7 +76,7 @@ export default function ContactForm() {
         <input
           {...register('phone')}
           type="text"
-          placeholder="Phone"
+          placeholder={f('phone')}
           className={twMerge('input', errors.phone && 'input-error')}  
         />
         { errors.phone && <span className='error-msg'>{errors.phone.message}</span> }
@@ -79,12 +84,17 @@ export default function ContactForm() {
       <div className='input-row'>
         <textarea
          {...register('message')}
-          placeholder="Message" 
+          placeholder={f('message')}
           className="input resize-none h-[129px]"
         />
       </div>
       <div className='text-center'>
-        <Button buttonType="submit" variant="button" title="SEND" />
+        <Button 
+          buttonType="submit"
+          variant="button"
+          title={t('send')}
+          className='cursor-pointer'
+        />
       </div>
     </form>
   )

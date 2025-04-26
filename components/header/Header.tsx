@@ -14,7 +14,7 @@ export function Header({
 	headerDesktopLogo,
 	headerMobileLogo,
 }:GlobalDataModelInterface) {
-	const t = useTranslations('HomePage');
+	const t = useTranslations('Global');
 
 	return (
 		<header className="min-h-[80px] sticky top-0 bg-black z-10">

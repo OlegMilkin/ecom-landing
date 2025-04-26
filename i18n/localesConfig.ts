@@ -1,4 +1,4 @@
-import { getLocales } from '@/lib/api/fetch-locales';
+//import { getLocales } from '@/lib/api/fetch-locales';
 
 //const loc = await getLocales();
 

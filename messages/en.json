@@ -1,5 +1,23 @@
 {
-    "HomePage": {
-        "contactUs": "Contact us"
-    }
+  "Global": {
+    "contactUs": "Contact us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "send": "Send"
+  },
+  "FormFields": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message"
+  },
+  "Messages": {
+    "somethingWrong": "Something went wrong!",
+    "emailSent": "Email sent!",
+    "requiredName": "Name is required",
+    "requiredEmail": "Email is required",
+    "invalidEmail": "Invalid email address",
+    "msgRequired": "Message is required"
+  }
 }

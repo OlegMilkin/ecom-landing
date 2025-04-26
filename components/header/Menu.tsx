@@ -24,6 +24,8 @@ export function Menu({
 	closeMenu,
 }: MenuProps) {
 
+	if(menuItems.length <= 0) return null;
+
 	const isContactPage = usePathname().includes('contact');
 
 	return (
