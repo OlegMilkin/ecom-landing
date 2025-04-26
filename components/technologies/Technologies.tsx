@@ -21,7 +21,7 @@ export function Technologies({
           <div className='w-full md:w-max grid grid-cols-[repeat(auto-fit,54px)] md:grid-cols-[repeat(3,82px)] gap-5 place-content-around md:place-content-end'>
             {technologiesList.map(item => <Image
               key={item.id}
-              src={`${process.env.BASE_URL}${item.icon}`}
+              src={`${process.env.NEXT_PUBLIC_BASE_URL}${item.icon}`}
               alt={item.iconAlt}
               title={item.iconTitle}
               width="82"

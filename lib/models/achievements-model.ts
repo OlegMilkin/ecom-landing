@@ -1,4 +1,4 @@
-import { AchivementItemModel, AchivementItemInterface } from '@/lib/models/achievement-item-model'; 
+import { createAchivementItemModel, AchivementItemInterface } from '@/lib/models/achievement-item-model'; 
 
 export interface ArchievementsDto {
   id: number;
@@ -20,22 +20,14 @@ export interface AchivementsModelInterface {
   anchorHref: string;
 }
 
-export class AchivementsModel {
-  id: number;
-  blockName: string;
-  achievements: AchivementItemInterface[];
-  description: string;
-  title: string;
-  isVisible: boolean;
-  anchorHref: string;
-
-  constructor (data: ArchievementsDto) {
-    this.id = data.id;
-    this.blockName = data.__component;
-    this.achievements = data.achievement.map((item: AchivementItemInterface) => new AchivementItemModel(item)) || [];
-    this.description = data.description || '';
-    this.title = data.title || '';
-    this.isVisible = data?.isVisible;
-    this.anchorHref = data?.anchorHref || '';
+export function createAchievementsModel(data: ArchievementsDto) {
+  return {
+    id: data.id,
+    blockName: data.__component,
+    achievements: data.achievement.map((item: AchivementItemInterface) => createAchivementItemModel(item)) || [],
+    description: data.description || '',
+    title: data.title || '',
+    isVisible: data?.isVisible || true,
+    anchorHref: data?.anchorHref || '',
   }
 }

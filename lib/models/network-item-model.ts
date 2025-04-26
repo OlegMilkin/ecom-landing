@@ -16,18 +16,12 @@ export interface NetworkItemModelInterface {
   icon: string;
 }
 
-export class NetworkItemModel {
-  id: number;
-  href: string;
-  title: string;
-  alt: string;
-  icon: string;
-
-  constructor(data: NetworkItemDto) {
-    this.id = data.id;
-    this.href = data?.href || '';
-    this.title = data?.title || '';
-    this.alt = data?.alt || '';
-    this.icon = data?.icon.url || '';
+export function createNetworkItemModel(data: NetworkItemDto) {
+  return {
+    id: data.id,
+    href: data?.href || '',
+    title: data?.title || '',
+    alt: data?.alt || '',
+    icon: data?.icon.url || '',
   }
 }

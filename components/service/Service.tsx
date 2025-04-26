@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ServiceModel } from '@/lib/models/service-model';
+import { ServiceModelInterface } from '@/lib/models/service-model';
 
 export function Service({
   anchorHref,
@@ -9,7 +9,7 @@ export function Service({
   description,
   isVisible,
   title
- }: ServiceModel) {
+ }: ServiceModelInterface) {
   if(!isVisible) return null;
 
   return (
@@ -17,7 +17,7 @@ export function Service({
       <section className='container flex gap-11 items-center mb-3.5 lg:my-11' id={anchorHref}>
         <div className='hidden lg:block w-[46%] shrink-0'>
           <Image 
-            src={`${process.env.BASE_URL}${cover}`}
+            src={`${process.env.NEXT_PUBLIC_BASE_URL}${cover}`}
             alt={coverAlt}
             title={coverTitle} 
             width="550"

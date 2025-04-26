@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { instance } from './api-service';
-import { HomePageModel } from '@/lib/models/home-page-model';
+import { createHomePageModel } from '@/lib/models/home-page-model';
 
 const populateParams = {
   block: {
@@ -70,11 +70,11 @@ const queryString = qs.stringify({
   populate: populateParams,
 });
 
-export const getHomePageData = async () => {
+export const getHomePageData = async (locale: string) => {
   try {
-    const { data } = await instance.get(`${process.env.BASE_URL}/api/home-page?${queryString}`);
+    const { data } = await instance.get(`/api/home-page?${queryString}&locale=${locale}`);
 
-    return new HomePageModel(data.data);
+    return createHomePageModel(data.data);
   } catch(e) {
     console.log(e)
   }

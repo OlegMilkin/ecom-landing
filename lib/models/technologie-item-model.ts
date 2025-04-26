@@ -14,16 +14,11 @@ export interface TechnologieItemModelInterface {
   icon: string;
 }
 
-export class TechnologieItemModel {
-  id: number;
-  iconAlt: string;
-  iconTitle: string;
-  icon: string;
-
-  constructor(data: TechnologieItemDto) {
-    this.id = data.id;
-    this.iconAlt = data?.iconAlt || '';
-    this.iconTitle = data?.iconTitle || '';
-    this.icon = data?.icon?.url || '';
+export function createTechnologieItemModel(data: TechnologieItemDto) {
+  return {
+    id: data.id,
+    iconAlt: data?.iconAlt || '',
+    iconTitle: data?.iconTitle || '',
+    icon: data?.icon?.url || '',
   }
 }

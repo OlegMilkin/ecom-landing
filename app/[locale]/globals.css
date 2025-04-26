@@ -19,7 +19,7 @@
 }
 
 .container {
-  @apply px-3 xl:px-0 w-full max-w-[1200px] mx-auto text-white;
+  @apply px-3 xl:px-0 w-full max-w-[1200px] mx-auto text-white overflow-hidden;
 }
 
 .text-gradient {

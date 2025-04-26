@@ -14,16 +14,11 @@ export interface PartnerItemModelInterface {
   icon: string;
 }
 
-export class PartnerItemModel {
-  id: number;
-  iconAlt: string;
-  iconTitle: string;
-  icon: string;
-
-  constructor(data: PartnerItemDto) {
-    this.id = data.id;
-    this.iconAlt = data?.iconAlt || '';
-    this.iconTitle = data?.iconTitle || '';
-    this.icon = data?.icon?.url || '';
+export function createPartnerItemModel(data: PartnerItemDto) {
+  return {
+    id: data.id,
+    iconAlt: data?.iconAlt || '',
+    iconTitle: data?.iconTitle || '',
+    icon: data?.icon?.url || '',
   }
 }

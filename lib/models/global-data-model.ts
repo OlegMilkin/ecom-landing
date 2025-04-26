@@ -1,5 +1,5 @@
-import { MenuItemModel, MenuItemModelInterface, MenuItemDto } from '@/lib/models/menu-item-model';
-import { NetworkItemModel, NetworkItemDto } from '@/lib/models/network-item-model';
+import { MenuItemDto, MenuItemModelInterface, greateMenuItemModel } from '@/lib/models/menu-item-model';
+import { NetworkItemDto, NetworkItemModelInterface, createNetworkItemModel } from '@/lib/models/network-item-model';
 
 interface GlobalDataDto {
   footerHeadline: string;
@@ -22,7 +22,7 @@ interface GlobalDataDto {
   networks: NetworkItemDto[]
 }
 
-export class GlobalDataModel {
+export interface GlobalDataModelInterface {
   footerHeadline: string;
   footerSubHeadline: string;
   headerDesktopLogo: {
@@ -36,23 +36,24 @@ export class GlobalDataModel {
     logo: string
   };
   menu: MenuItemModelInterface[];
-  networks: NetworkItemModel[]
+  networks: NetworkItemModelInterface[]
+}
 
-
-  constructor(data: GlobalDataDto) {
-    this.footerHeadline = data?.footerHeadline || '';
-    this.footerSubHeadline = data?.footerSubHeadline || '';
-    this.headerDesktopLogo = {
-      href: data.headerDesktopLogo.href,
-      alt: data.headerDesktopLogo.alt,
-      logo: data.headerDesktopLogo.logo.url
-    };
-    this.headerMobileLogo = {
-      href: data.headerMobileLogo.href,
-      alt: data.headerMobileLogo.alt,
-      logo: data.headerMobileLogo.logo.url
-    };
-    this.menu = data.menu.map((item: MenuItemDto) => new MenuItemModel(item));
-    this.networks = data.networks.map((item: NetworkItemDto) => new NetworkItemModel(item));
-  }
+export function createGlobalDataModel(data: GlobalDataDto): GlobalDataModelInterface {
+  return {
+    footerHeadline: data?.footerHeadline || '',
+    footerSubHeadline: data?.footerSubHeadline || '',
+    headerDesktopLogo: {
+      href: data?.headerDesktopLogo?.href || '',
+      alt: data?.headerDesktopLogo?.alt || '',
+      logo: data?.headerDesktopLogo?.logo?.url || ''
+    },
+    headerMobileLogo: {
+      href: data?.headerMobileLogo?.href || '',
+      alt: data?.headerMobileLogo?.alt || '',
+      logo: data?.headerMobileLogo?.logo?.url || ''
+    },
+    menu: (data?.menu || []).map((item: MenuItemDto) => greateMenuItemModel(item)),
+    networks: (data?.networks || []).map((item: NetworkItemDto) => createNetworkItemModel(item)),
+  };
 }

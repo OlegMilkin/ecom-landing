@@ -15,16 +15,11 @@ export interface ContactPageModelInterface {
   ctaTextSub: string;
 }
 
-export class ContactPageModel {
-  title: string;
-  description: string;
-  ctaText: string;
-  ctaTextSub: string;
-
-  constructor (data: ContactPageDto) {
-    this.title = data?.getInTouch.title || '';
-    this.description = data?.getInTouch.description || '';
-    this.ctaText = data?.getInTouch.ctaText || '';
-    this.ctaTextSub = data?.getInTouch.ctaTextSub || '';
+export function createContactPageModel(data: ContactPageDto) {
+  return {
+    title: data?.getInTouch.title || '',
+    description :data?.getInTouch.description || '',
+    ctaText: data?.getInTouch.ctaText || '',
+    ctaTextSub: data?.getInTouch.ctaTextSub || '',
   }
 }

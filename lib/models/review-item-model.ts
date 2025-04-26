@@ -10,14 +10,10 @@ export interface ReviewItemModelInterface {
   reviewText: string;
 }
 
-export class ReviewItemModel {
-  id: number;
-  name: string;
-  reviewText: string;
-
-  constructor(data: ReviewItemDto) {
-    this.id = data.id;
-    this.name = data?.name || '';
-    this.reviewText = data?.reviewText || '';
+export function createReviewItemModel(data: ReviewItemDto) {
+  return {
+    id: data.id,
+    name: data?.name || '',
+    reviewText: data?.reviewText || '',
   }
 }

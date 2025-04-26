@@ -1,17 +1,18 @@
-import usePageData from '@/app/[locale]/use-page-data';
 import { Menu } from '@/components/header/Menu';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import mobileLogo from '@/public/mobile-logo.svg';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
-import { useId } from 'react';
+import { GlobalDataModelInterface } from '@/lib/models/global-data-model';
 
-export function Footer() {
-  const { 
-    menuItems,
-    socialLinks,
-  } = usePageData();
+export function Footer({
+    networks,
+    menu,
+    footerHeadline,
+    footerSubHeadline,
+  }: GlobalDataModelInterface) {
+
   const t = useTranslations('HomePage');
 
   return (
@@ -27,16 +28,14 @@ export function Footer() {
                 height={114}
               />
             </Link>
-            {socialLinks?.length > 0 && (
+            {networks?.length > 0 && (
               <ul className='flex gap-10 mt-20 mb-12'>
-                {socialLinks.map(item => {
-                  const id = useId();
-
-                  return <li key={id}>
-                    <Link href={item.link}>
+                {networks.map(item => {
+                  return <li key={item.id}>
+                    <Link href={item.href}>
                       <Image
-                        src={`/${item.cover}`}
-                        alt=""
+                        src={`${process.env.NEXT_PUBLIC_BASE_URL}${item.icon}`}
+                        alt={item.alt}
                         width="36"
                         height="36"
                       />
@@ -53,18 +52,17 @@ export function Footer() {
           </div>
           <div className="hidden md:block">
             <Menu 
-              menuItems={menuItems}
+              menuItems={menu}
               linkClass='text-xl'
               ulClass='gap-7'
             /> 
           </div>
           <div className="hidden md:block w-[250px] mr-5">
             <h4 className='text-[23px] font-bold mb-11'>
-              Have questions? Let's get in touch!
+              {footerHeadline}
             </h4>
             <p className='text-[15px] mb-11'>
-              Our team is ready to answer your questions and provide the solutions you need.
-              Click the button to visit our contact page and get started today.
+              {footerSubHeadline}
             </p>
             <Button title={t('contactUs')} />
           </div>

@@ -18,20 +18,13 @@ export interface ExpertiseItemInterface {
   cover: string;
 }
 
-export class ExpertiseItemModel {
-  id: number;
-  description: string;
-  title: string;
-  coverAlt: string;
-  coverTitle: string;
-  cover: string;
-
-  constructor(data: ExpertiseItemDto) {
-    this.id = data.id;
-    this.description = data?.description || '';
-    this.title = data?.title || '';
-    this.coverAlt = data?.coverAlt || '';
-    this.coverTitle = data?.coverTitle || '';
-    this.cover = data?.cover?.url || '';
+export function createExpertiseItemModel(data: ExpertiseItemDto) {
+  return {
+    id: data.id,
+    description: data?.description || '',
+    title: data?.title || '',
+    coverAlt: data?.coverAlt || '',
+    coverTitle: data?.coverTitle || '',
+    cover: data?.cover?.url || '',
   }
 }

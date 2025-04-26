@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { instance } from './api-service';
-import { ContactPageModel } from '@/lib/models/contact-page-model';
+import { createContactPageModel } from '@/lib/models/contact-page-model';
 
 const populateParams = {
   getInTouch: {
@@ -12,11 +12,11 @@ const queryString = qs.stringify({
   populate: populateParams,
 });
 
-export const getContactPageData = async () => {
+export const getContactPageData = async (locale: string) => {
   try {
-    const { data } = await instance.get(`${process.env.BASE_URL}/api/contact?${queryString}`);
+    const { data } = await instance.get(`/api/contact?${queryString}&locale=${locale}`);
 
-    return new ContactPageModel(data.data);
+    return createContactPageModel(data.data);
   } catch(e) {
     console.log(e)
   }

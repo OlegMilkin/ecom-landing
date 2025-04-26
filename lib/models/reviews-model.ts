@@ -1,4 +1,4 @@
-import { ReviewItemModel, ReviewItemDto } from  '@/lib/models/review-item-model';
+import { createReviewItemModel, ReviewItemDto, ReviewItemModelInterface } from  '@/lib/models/review-item-model';
 
 export interface ReviewsDto {
   id: number;
@@ -13,25 +13,18 @@ export interface ReviewsModelInterface {
   id: number;
   blockName: string;
   title: string;
-  reviewItems: ReviewItemModel[];
+  reviewItems: ReviewItemModelInterface[];
   isVisible: boolean;
   anchorHref: string; 
 }
 
-export class ReviewsModel {
-  id: number;
-  blockName: string;
-  title: string;
-  reviewItems: ReviewItemModel[];
-  isVisible: boolean;
-  anchorHref: string;
-
-  constructor (data: ReviewsDto) {
-    this.id = data.id;
-    this.blockName = data.__component;
-    this.title = data.title || '';
-    this.reviewItems = data.reviewItem.map((item: ReviewItemDto) => new ReviewItemModel(item)) || [];
-    this.isVisible = data?.isVisible;
-    this.anchorHref = data?.anchorHref || '';
+export function createReviewsModel(data: ReviewsDto) {
+  return {
+    id: data.id,
+    blockName :data.__component,
+    title: data.title || '',
+    reviewItems :data.reviewItem.map((item: ReviewItemDto) => createReviewItemModel(item)) || [],
+    isVisible: data?.isVisible,
+    anchorHref: data?.anchorHref || '',
   }
 }

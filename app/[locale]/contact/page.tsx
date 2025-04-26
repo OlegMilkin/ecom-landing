@@ -1,8 +1,10 @@
 import ContactForm from '@/components/contact-form/ContactForm';
 import { getContactPageData } from '@/lib/api/fetch-contact-page-data';
+import { getLocale } from 'next-intl/server';
 
 export default async function Contact() {
-	const contactPageData = await getContactPageData(); 
+	const locale = await getLocale();
+	const contactPageData = await getContactPageData(locale); 
 	
 	return (
 		<section className='container'>

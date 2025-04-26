@@ -20,7 +20,7 @@ export function Partners({
           <ul className='grid grid-cols-[repeat(auto-fit,57px)] md:grid-cols-[repeat(auto-fit,100px)] gap-6 md:gap-16 justify-between'>
             { partnerIcons.map((item: PartnerItemModelInterface) => <Image
                 key={item.id}
-                src={`${process.env.BASE_URL}${item.icon}`}
+                src={`${process.env.NEXT_PUBLIC_BASE_URL}${item.icon}`}
                 alt={item.iconAlt}
                 title={item.iconTitle}
                 width="100"

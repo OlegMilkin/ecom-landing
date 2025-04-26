@@ -1,5 +1,5 @@
-import { TechnologieItemModel, TechnologieItemDto } from '@/lib/models/technologie-item-model';
-import { ServiceItemModel, ServiceItemDto } from '@/lib/models/service-item-model';  
+import { createTechnologieItemModel, TechnologieItemDto, TechnologieItemModelInterface } from '@/lib/models/technologie-item-model';
+import { createServiceItemModel, ServiceItemDto, ServiceItemModelInterface } from '@/lib/models/service-item-model';  
 
 export interface TechnologiesDto {
   id: number;
@@ -13,26 +13,19 @@ export interface TechnologiesDto {
 export interface TechnologiesModelInterface {
   id: number;
   blockName: string;
-  servicesList: ServiceItemModel[];
-  technologiesList: TechnologieItemModel[];
+  servicesList: ServiceItemModelInterface[];
+  technologiesList: TechnologieItemModelInterface[];
   isVisible: boolean;
   anchorHref: string; 
 }
 
-export class TechnologiesModel {
-  id: number;
-  blockName: string;
-  servicesList: ServiceItemModel[];
-  technologiesList: TechnologieItemModel[];
-  isVisible: boolean;
-  anchorHref: string;
-
-  constructor (data: TechnologiesDto) {
-    this.id = data.id;
-    this.blockName = data.__component;
-    this.servicesList = data.serviceItem.map((item: ServiceItemDto) => new ServiceItemModel(item)) || [];
-    this.technologiesList = data.technologieItem.map((item: TechnologieItemDto) => new TechnologieItemModel(item)) || [];
-    this.isVisible = data?.isVisible;
-    this.anchorHref = data?.anchorHref || '';
+export function createTechnologiesModel(data: TechnologiesDto) {
+  return {
+    id: data.id,
+    blockName: data.__component,
+    servicesList: data.serviceItem.map((item: ServiceItemDto) => createServiceItemModel(item)) || [],
+    technologiesList: data.technologieItem.map((item: TechnologieItemDto) => createTechnologieItemModel(item)) || [],
+    isVisible: data?.isVisible,
+    anchorHref: data?.anchorHref || '',
   }
 }

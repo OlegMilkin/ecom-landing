@@ -10,15 +10,10 @@ export interface AchivementItemInterface {
   title: string;
 }
 
-export class AchivementItemModel {
-  id: number;
-  description: string;
-  title: string;
-
-
-  constructor(data: AchivementItemDto) {
-    this.id = data.id;
-    this.description = data.description;
-    this.title = data.title;
+export function createAchivementItemModel(data: AchivementItemDto) {
+  return {
+    id: data.id,
+    description: data.description,
+    title: data.title,
   }
 }

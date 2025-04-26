@@ -1,8 +1,10 @@
 'use client'
 
-import { Toaster } from 'sonner'
+import { Toaster } from 'sonner';
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ 
+  children
+}: { children: React.ReactNode }) {
   return (
     <>
       {children}

@@ -1,4 +1,4 @@
-import { ExpertiseItemModel, ExpertiseItemDto } from '@/lib/models/expertise-item-model'; 
+import { createExpertiseItemModel, ExpertiseItemDto, ExpertiseItemInterface } from '@/lib/models/expertise-item-model'; 
 
 export interface ExpertiseDto {
   id: number;
@@ -13,25 +13,18 @@ export interface ExpertiseModelInterface {
   id: number;
   blockName: string;
   title: string;
-  expertises: ExpertiseItemModel[];
+  expertises: ExpertiseItemInterface[];
   isVisible: boolean;
   anchorHref: string; 
 }
 
-export class ExpertiseModel {
-  id: number;
-  blockName: string;
-  title: string;
-  expertises: ExpertiseItemModel[];
-  isVisible: boolean;
-  anchorHref: string;
-
-  constructor (data: ExpertiseDto) {
-    this.id = data.id;
-    this.blockName = data.__component;
-    this.title = data.title || '';
-    this.expertises = data.expertise.map((item: ExpertiseItemDto) => new ExpertiseItemModel(item)) || [];
-    this.isVisible = data?.isVisible;
-    this.anchorHref = data?.anchorHref || '';
+export function createExpertiseModel(data: ExpertiseDto) {
+  return {
+    id: data.id,
+    blockName: data.__component,
+    title: data.title || '',
+    expertises: data.expertise.map((item: ExpertiseItemDto) => createExpertiseItemModel(item)) || [],
+    isVisible: data?.isVisible,
+    anchorHref: data?.anchorHref || '',
   }
 }

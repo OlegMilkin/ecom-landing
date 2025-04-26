@@ -10,14 +10,10 @@ export interface MenuItemModelInterface {
   title: string;
 }
 
-export class MenuItemModel {
-  id: number;
-  href: string;
-  title: string;
-
-  constructor(data: MenuItemDto) {
-    this.id = data.id;
-    this.href = data?.href || '';
-    this.title = data?.title || '';
+export function greateMenuItemModel(data: MenuItemDto) {
+  return {
+    id: data.id,
+    href: data?.href || '',
+    title: data?.title || '',
   }
 }

@@ -14,20 +14,14 @@ export interface PricingItemInterface {
   pricingItemServices: {id: number, service: string}[]
 }
 
-export class PricingItemModel {
-  id: number;
-  description: string;
-  title: string;
-  price: string;
-  pricingItemServices: {id: number, service: string}[]
-
-  constructor(data: PricingItemDto) {
-    this.id = data.id;
-    this.description = data?.description || '';
-    this.title = data?.title || '';
-    this.price = data?.price || '';
-    this.pricingItemServices = data.pricingItemService.map((item: {id: number, service: string}) => (
+export function createPricingItemModel(data: PricingItemDto) {
+  return {
+    id: data.id,
+    description: data?.description || '',
+    title: data?.title || '',
+    price: data?.price || '',
+    pricingItemServices: data.pricingItemService.map((item: {id: number, service: string}) => (
       {id: item.id, service: item.service})
-    ) || [];
+    ) || [],
   }
 }

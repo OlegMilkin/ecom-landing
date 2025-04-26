@@ -8,10 +8,13 @@ import { Reviews } from '@/components/reviews/Reviews';
 import { getHomePageData } from '@/lib/api/fetch-home-page-data';
 import { HomePageBlockInterfaces } from '@/lib/models/home-page-model';
 import { Technologies } from '@/components/technologies/Technologies';
+import { getLocale } from 'next-intl/server';
 
 
 export default async function Home() {
-  const homePageData = await getHomePageData();  
+  const locale = await getLocale();
+  const homePageData = await getHomePageData(locale);
+
   if (!homePageData) return null;
 
   const renderBlocks = (data: HomePageBlockInterfaces[]) => {
@@ -41,7 +44,7 @@ export default async function Home() {
 
   return (
     <>
-      {renderBlocks(homePageData.blocks)}
+      {renderBlocks(homePageData)}
     </>
   );
 }

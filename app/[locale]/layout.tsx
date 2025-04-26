@@ -21,11 +21,13 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const globalData = await getGlobalData();
-  console.log('globalData', globalData);
-
-
   const { locale } = await params;
+  const globalData = await getGlobalData(locale);
+
+  if (!globalData) {
+    throw new Error('Failed to fetch global data');
+  }
+
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
@@ -37,9 +39,9 @@ export default async function LocaleLayout({
       <body className="bg-black font-inter">
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            <Header />
+            <Header {...globalData} />
             {children}
-            <Footer />
+            <Footer {...globalData} />
           </NextIntlClientProvider>
         </Providers>  
       </body>
